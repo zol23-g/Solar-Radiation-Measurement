@@ -3,4 +3,4 @@ venv/
 
 # Ignore VS Code settings directory
 .vscode/
-./data
+# ./data
