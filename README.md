@@ -1,6 +1,6 @@
 # Solar-Radiation-Measurement
 
-====================================================================================================================
+================================================================================
 ## Overview
 Welcome to the Solar Farm Data Analysis Dashboard project! This project aims to provide a comprehensive and interactive web application for performing exploratory data analysis (EDA) on solar farm data from various countries. Built using Streamlit, a powerful and user-friendly framework for creating data apps in Python, this dashboard allows users to gain insights into solar farm performance and related environmental factors.
 
