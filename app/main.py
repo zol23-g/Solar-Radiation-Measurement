@@ -8,7 +8,7 @@ from scipy import stats
 # Load your dataset
 @st.cache_data
 def load_data():
-    data = pd.read_csv('C:/Users/zelalem.wubet/projects/personal/ten-academy/Solar-Radiation-Measurement/data/benin-malanville.csv')
+    data = pd.read_csv('../data/benin-malanville.csv')
     data['Timestamp'] = pd.to_datetime(data['Timestamp'])  # Ensure Timestamp is in datetime format
     data.set_index('Timestamp', inplace=True)  # Set Timestamp as the index
     return data
