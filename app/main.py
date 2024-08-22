@@ -15,9 +15,65 @@ def load_data():
 
 data = load_data()
 
-# Sidebar for navigation
+# Custom CSS for the sidebar and hamburger menu
+st.markdown("""
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    .hamburger {
+        display: none;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+    .hamburger:hover {
+        background-color: #45a049;
+    }
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+        .sidebar .sidebar-content {
+            display: none;
+        }
+        .sidebar.active .sidebar-content {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+            background-color: #333;
+            color: white;
+        }
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Sidebar toggle button (Hamburger menu)
+st.markdown("""
+    <button class="hamburger" onclick="toggleSidebar()">☰ Menu</button>
+    <script>
+    function toggleSidebar() {
+        var sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+    }
+    </script>
+""", unsafe_allow_html=True)
+
+# Sidebar for navigation (dropdown)
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Select a section:", [
+page = st.sidebar.selectbox("Select a section:", [
     "Introduction",
     "Visualize Outliers",
     "Monthly & Daily Averages",
